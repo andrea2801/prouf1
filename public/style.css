@@ -72,3 +72,12 @@ text-align: justify;
   justify-content: center;
   font-size: 2rem;
 }
+th{
+  color: #000;
+  font-weight: bold;
+  font-size: large;
+}
+td{
+  color: #000;
+  font-size: medium;
+}
