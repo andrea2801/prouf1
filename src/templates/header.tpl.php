@@ -16,7 +16,7 @@
      </div>
      <div id="nav2">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="?url=home">Home</a></li>
         </ul>
         <ul class="nav navbar-nav">
           <li><a href="../?url=dashboard">Task</a></li>
