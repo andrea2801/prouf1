@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
+  #login .container #login-row #login-column #login-box {
+    margin-top: 2rem;
+    margin-left: 30rem;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+  }
+  #login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+  }
+  #register .container #login-row #login-column #login-box {
+    margin-top: 2rem;
+    margin-left: 30rem;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+  }
+  #register .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+  }
+  #register .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+  }
+  .text-info {
+    color: #000;
+}
+.container-fluid{
+display: flex;
+justify-content: flex-start;
+}
+#nav2{
+    display: flex;
+justify-content: flex-end;
+}
+#mediofo{
+    margin-top: 2rem;
+    justify-content: end;
+}
+.mediofo{
+  margin: 4px;
+  font-size: 90%;
+  text-align: right;
+
+}
+
+footer {
+  text-align: right;
+  justify-content: end;
+  padding: 2rem;
+  background-color: #333;
+  color: white;
+}
+#home{
+text-align: justify;
+  height: 30rem;
+  margin:2rem;
+  background-image: url('https://www.muycomputerpro.com/wp-content/uploads/2019/10/gestionar_tiempo_trabajo.jpg');
+}
+.homes{
+
+text-align: justify;
+  justify-content: center;
+  font-size: 2rem;
+}
