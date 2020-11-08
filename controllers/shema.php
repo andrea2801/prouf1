@@ -15,13 +15,12 @@
            
                     
             
-            function deleteSchema(PDO $db, $username){
-                $deleteComand=" DELETE FROM users 
-                WHERE name =  '.$username.'";
+            function deleteTarea(PDO $db, $idtask){
+                $deleteComand=" DELETE FROM Task 
+                WHERE id =  '$idtask'";
         
                 try{
                     $db->exec($deleteComand);
-                    echo "Se ha eliminado correctamente";
                 }catch(PDOException $e){
                     die($e->getMessage());
                 }
@@ -73,25 +72,52 @@
         }
     }
         
-    function taskUser(array $taskuser) {
-        print "<br><table";
-        $row = $taskuser[0];
-        $title = " <tr> ";
-        foreach ($row as $field => $value) {
-            $title .= "<td>  $field  </td> ";
-        }
-        print $title . "<tr>";
+    // funció de selecció de  tots els registres
+      function selectAll($db,$table,array $fields=null):array
+      {
+          if (is_array($fields)){
+              $columns=implode(',',$fields);
+              
+          }else{
+              $columns="*";
+          }
+          
+          $sql="SELECT {$columns} FROM {$table}";
+         
+          $stmt=$db->prepare($sql);
+          $stmt->execute();
+          $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);
+          return $rows;
+      }
     
-        foreach ($taskuser as $row) {
-            $line = "<tr>";
-            foreach ($row as $field) {
-                $line .= "<td>$field</td>";
+         // insertar tareas
+    function insertTareas($db,$table,$data):bool 
+    {
+       if (is_array($data)){
+          $columns='';$bindv='';$values=null;
+            foreach ($data as $column => $value) {
+                $columns.='`'.$column.'`,';
+                $bindv.='?,';
+                $values[]=$value;
             }
-            print $line . "</tr>";
+            $columns=substr($columns,0,-1);
+            $bindv=substr($bindv,0,-1);
+              
+            $sql="INSERT INTO {$table}({$columns}) VALUES ({$bindv})";
+            
+                try{
+                    $stmt=$db->prepare($sql);
+
+                    $stmt->execute($values);
+                }catch(PDOException $e){
+                    echo $e->getMessage();
+                    return false;
+                }
+            
+            return true;
+            }
+            return false;
         }
-        print "</table><br>";
-    }
-    
         
 
    
