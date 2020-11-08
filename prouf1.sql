@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS  `Task` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`description` VARCHAR(100) NOT NULL,
 	`user` INT NOT NULL,
-	`due_date` DATETIME(6) NOT NULL,
+	`due_date` DATE NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
